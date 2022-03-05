@@ -1,0 +1,415 @@
+# how the Api is working and how it should work
+
+swagger: "2.0"
+info:
+  title: GreenX API 
+  description: API's to list and add Items
+  version: 1.0
+  contact:
+    email: sarthaknaik010@gmail.com
+  license:
+    name: Apache 2.0
+    url: "http://apache.org/"
+  servers:
+    -url: "http://localhost:7000/"
+    description: This is my Local servers
+
+# define path
+# path:
+#   /api/v1/allcategoryitems:
+#     get:
+#       summary: Returning Array of Objects
+#       description: Returning all the category Items present in the databse
+#       response:
+#         200:
+#           description: success
+#           schema:
+#             type: array
+#             items:
+#               type: object
+#               properties:
+#                 category:
+#                   type: object
+#                   properties:
+#                     images:
+#                       type: object
+#                       properties:
+#                         public_id: integer
+#                         url: string
+#                     _id: string
+#                     price: integer
+#                     description: string
+#                     product_details: string
+#                     category_id: integer
+#                     stock: integer
+#                     seller_id: integer
+#                     createAt: date
+#                     __v: integer
+
+paths:
+  /api/v1/allcategoryitems:
+    get:
+      summary: Returning Array of Objects
+      description: Returning all the category Items present in the databse
+      responses:
+        200:
+          description: success
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                category:
+                  type: object
+                  properties:
+                    images:
+                      type: object
+                      properties:
+                        public_id:
+                          type: integer
+                        url: 
+                          type: string
+                    _id: 
+                      type: string
+                    price: 
+                      type: integer
+                    description: 
+                      type: string
+                    product_details: 
+                      type: string
+                    category_id: 
+                      type: integer
+                    stock: 
+                      type: integer
+                    seller_id: 
+                      type: integer
+                    createAt: 
+                      type: string
+                    __v: 
+                      type: integer
+
+# adding pots into the database
+  /insertintopots:
+    post:
+      summary: pots creation
+      description: adding new pots into the database
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: pots-creation
+        schema:
+                  type: object
+                  properties:
+                    images:
+                      type: object
+                      properties:
+                        public_id:
+                          type: integer
+                        url: 
+                          type: string
+                    
+                    price: 
+                      type: integer
+                    description: 
+                      type: string
+                    product_details: 
+                      type: string
+                    category_id: 
+                      type: integer
+                    stock: 
+                      type: integer
+                    seller_id: 
+                      type: integer
+                   
+      responses:
+        200:
+          description: OK
+
+# adding agricultural products into the database
+  /insertintoagriProductModel:
+    post:
+      summary: agricultural products creation
+      description: adding new agricultural products into the database
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: agricultural products-creation
+        schema:
+                  type: object
+                  properties:
+                    images:
+                      type: object
+                      properties:
+                        public_id:
+                          type: integer
+                        url: 
+                          type: string
+                    
+                    price: 
+                      type: integer
+                    description: 
+                      type: string
+                    product_details: 
+                      type: string
+                    category_id: 
+                      type: integer
+                    stock: 
+                      type: integer
+                    seller_id: 
+                      type: integer
+                   
+      responses:
+        200:
+          description: OK
+        
+# adding agricultural products into the database
+  /insertintoagriToolsModel:
+    post:
+      summary: agricultural tools creation
+      description: adding new agricultural tools into the database
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: agricultural-tools-creation
+        schema:
+                  type: object
+                  properties:
+                    images:
+                      type: object
+                      properties:
+                        public_id:
+                          type: integer
+                        url: 
+                          type: string
+                    
+                    price: 
+                      type: integer
+                    description: 
+                      type: string
+                    product_details: 
+                      type: string
+                    category_id: 
+                      type: integer
+                    stock: 
+                      type: integer
+                    seller_id: 
+                      type: integer
+                   
+      responses:
+        200:
+          description: OK
+        
+# adding books into the database
+  /insertintobooksModel:
+    post:
+      summary: books creation
+      description: adding new books into the database
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: books-creation
+        schema:
+                  type: object
+                  properties:
+                    images:
+                      type: object
+                      properties:
+                        public_id:
+                          type: integer
+                        url: 
+                          type: string
+                    
+                    price: 
+                      type: integer
+                    description: 
+                      type: string
+                    product_details: 
+                      type: string
+                    category_id: 
+                      type: integer
+                    stock: 
+                      type: integer
+                    seller_id: 
+                      type: integer
+                   
+      responses:
+        200:
+          description: OK
+        
+      
+# adding fruits into the database
+  /insertintofruitsModel:
+    post:
+      summary: fruits creation
+      description: adding new fruits into the database
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: fruits-creation
+        schema:
+                  type: object
+                  properties:
+                    images:
+                      type: object
+                      properties:
+                        public_id:
+                          type: integer
+                        url: 
+                          type: string
+                    
+                    price: 
+                      type: integer
+                    description: 
+                      type: string
+                    product_details: 
+                      type: string
+                    category_id: 
+                      type: integer
+                    stock: 
+                      type: integer
+                    seller_id: 
+                      type: integer
+                   
+      responses:
+        200:
+          description: OK
+        
+    
+# adding seeds into the database
+  /insertintoseedsModel:
+    post:
+      summary: seeds creation
+      description: adding new seeds collection into the database
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: seeds-creation
+        schema:
+                  type: object
+                  properties:
+                    images:
+                      type: object
+                      properties:
+                        public_id:
+                          type: integer
+                        url: 
+                          type: string
+                    
+                    price: 
+                      type: integer
+                    description: 
+                      type: string
+                    product_details: 
+                      type: string
+                    category_id: 
+                      type: integer
+                    stock: 
+                      type: integer
+                    seller_id: 
+                      type: integer
+                   
+      responses:
+        200:
+          description: OK
+        
+       
+    
+# adding seeds into the database
+  /insertintospicesModel:
+    post:
+      summary: spices creation
+      description: adding new spices collection into the database
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: spices-creation
+        schema:
+                  type: object
+                  properties:
+                    images:
+                      type: object
+                      properties:
+                        public_id:
+                          type: integer
+                        url: 
+                          type: string
+                    
+                    price: 
+                      type: integer
+                    description: 
+                      type: string
+                    product_details: 
+                      type: string
+                    category_id: 
+                      type: integer
+                    stock: 
+                      type: integer
+                    seller_id: 
+                      type: integer
+                   
+      responses:
+        200:
+          description: OK
+        
+
+# adding seeds into the database
+  /insertintovegetablesModel:
+    post:
+      summary: vegetable creation
+      description: adding new vegetables collection into the database
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: vegetable-creation
+        schema:
+                  type: object
+                  properties:
+                    images:
+                      type: object
+                      properties:
+                        public_id:
+                          type: integer
+                        url: 
+                          type: string
+                    
+                    price: 
+                      type: integer
+                    description: 
+                      type: string
+                    product_details: 
+                      type: string
+                    category_id: 
+                      type: integer
+                    stock: 
+                      type: integer
+                    seller_id: 
+                      type: integer
+                   
+      responses:
+        200:
+          description: OK
+        
